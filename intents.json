@@ -1,0 +1,51 @@
+{
+ "intents":[
+  {
+   "tag":"greeting",
+   "patterns":[
+    "hello",
+    "hi",
+    "hey",
+    "good morning"
+   ],
+   "responses":[
+    "Hello! How can I help you?",
+    "Hi there!"
+   ]
+  },
+
+  {
+   "tag":"name",
+   "patterns":[
+    "what is your name",
+    "who are you"
+   ],
+   "responses":[
+    "I am Alpha, an AI chatbot created using Python."
+   ]
+  },
+
+  {
+   "tag":"ai",
+   "patterns":[
+    "what is AI",
+    "explain AI"
+   ],
+   "responses":[
+    "AI is Artificial Intelligence allows machines to learn and make decisions like humans."
+   ]
+  },
+
+  {
+   "tag":"bye",
+   "patterns":[
+    "bye",
+    "goodbye",
+    "see you"
+   ],
+   "responses":[
+    "Goodbye! Have a great day."
+   ]
+  }
+ ]
+}
