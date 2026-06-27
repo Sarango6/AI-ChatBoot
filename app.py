@@ -20,19 +20,6 @@ st.sidebar.markdown(
 """
 ### Developer
 Sarang Chavan
-
-### Features
-✅ OpenRouter AI  
-✅ NLP Chatbot  
-✅ Voice Input  
-✅ Chat History  
-✅ Timestamp  
-
-### Tech Stack
-Python  
-Streamlit  
-Scikit-Learn  
-OpenRouter API
 """
 )
 
@@ -84,18 +71,13 @@ if st.button("🎤 Speak"):
 
     )
 
+    with st.spinner("🤔 Thinking..."):
+        response = ask_ai(user_voice)
 
-    response = ask_ai(user_voice)
-
-
-
-    if response is None:
-
-        response = chatbot_response(
-            user_voice
-        )
-
-
+        if response is None:
+            response = chatbot_response(
+                user_voice
+            )
 
     st.session_state.messages.append(
 
@@ -120,21 +102,17 @@ if st.button("🎤 Speak"):
 
 for msg in st.session_state.messages:
 
-
     with st.chat_message(
         msg["role"]
     ):
-
 
         st.write(
             msg["content"]
         )
 
-
         st.caption(
             "🕒 "+msg["time"]
         )
-
 
 
 
@@ -163,22 +141,18 @@ if user_input:
 
     )
 
-
-    response = ask_ai(
-        user_input
-    )
-
-
-    # fallback old chatbot
-
-    if response is None:
-
-        response = chatbot_response(
+    with st.spinner("🤔 Thinking..."):
+        response = ask_ai(
             user_input
         )
 
+        # fallback old chatbot
 
+        if response is None:
 
+            response = chatbot_response(
+                user_input
+            )
 
     st.session_state.messages.append(
 
